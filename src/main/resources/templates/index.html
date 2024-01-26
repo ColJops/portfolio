@@ -1,156 +1,349 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" lang="pl">
     <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
-        <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
-        <link rel="stylesheet" th:href="@{/styles/index.css}">
-        <title>Start portfolio</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="portfolio fullstack" />
+        <meta name="author" content="Daniel Kupracz" />
+        <title>Moje portfolio</title>
+        <!-- Favicon-->
+        <!--link rel="icon" type="image/x-icon" href="/src/main/resources/static/assets/favicon.ico" /-->
+        <link rel="icon" type="image/x-icon" th:href="@{/assets/favicon.ico}" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <!--link href="/css/index.css" rel="stylesheet" /-->
+        <link th:href="@{/css/index.css}" rel="stylesheet" />
     </head>
-    <body>
-        <main>
-            <nav id="navbar">
-                <ul>
-                    <li><a href="#intro-section">Home</a></li>
-                    <li><a href="#about-section">About</a></li>
-                    <li><a href="#skills-section">Skills</a></li>
-                    <li><a href="#projects-section">Projects</a></li>
-                    <li><a href="#contact-section">Contact</a></li>
-                </ul>
-            </nav>
-    
-            <section id="intro-section"> 
-            </section>
-    
-            <section id="welcome-section">
-                <div class="message">
-                    <p>Hello! <br> I am Full Stack Developer</p>
+    <body id="page-top">
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
+            <div class="container">
+                <a class="navbar-brand" href="#page-top">Moje Portfolio</a>
+                <button class="navbar-toggler text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    Menu
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#portfolio">Projekty</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#about">O mnie</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#contact">Kontact</a></li>
+                    </ul>
                 </div>
-                <div class="message">
-                    <img src="https://cdn.pixabay.com/photo/2016/10/13/16/26/web-agency-1738168_1280.jpg" alt="">
+            </div>
+        </nav>
+        <!-- Masthead-->
+        <header class="masthead bg-primary text-white text-center">
+            <div class="container d-flex align-items-center flex-column">
+                <!-- Masthead Avatar Image-->
+                <!--img class="masthead-avatar mb-5" src="/src/main/resources/static/assets/img/me.jpg" alt="..." /-->
+                <img class="masthead-avatar mb-5" th:src="@{/assets/img/me.jpg}" alt="avatar" />
+                <!-- Masthead Heading-->
+                <h1 class="masthead-heading text-uppercase mb-0">Daniel Kupracz</h1>
+                <!-- Icon Divider-->
+                <div class="divider-custom divider-light">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                    <div class="divider-custom-line"></div>
                 </div>
-            </section>
-    
-            <section id="about-section">
-                <h1 class="section-heading">About me</h1>
-                <div class="about-container">
-                    <div class="message my-image">
-                        <img src="https://cdn.pixabay.com/photo/2016/11/16/11/12/computer-1828603__340.jpg" alt="">
-                    </div>
-                    <div class="message my-information">
-                        <p>I am Daniel.</p>
-                        <p>I am programmer and tech enthusiast.</p>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus architecto beatae cum sapiente voluptates libero ab harum perferendis similique. Voluptatem.</p>
-                    </div>
-                </div>
-            </section>
-    
-            <section id="skills-section">
-                <h1 class="section-heading">My skills</h1>
-                <div class="skills-container"> 
-                    <div class="skill-information">
-                        <p> <i class="fab fa-html5 fa-3x"></i> </p>
-                        <p class="skill-name"> HTML5 </p>
-                        <p> <progress value="95" max="100" /> </p>
-                    </div>
-                    <div class="skill-information">
-                        <p> <i class="fab fa-css3 fa-3x"></i> </p>
-                        <p class="skill-name"> CSS3 </p>
-                        <p> <progress value="95" max="100" /> </p>
-                    </div>
-                    <div class="skill-information">
-                        <p> <i class="fab fa-js fa-3x"></i> </p>
-                        <p class="skill-name"> JavaScript </p>
-                        <p> <progress value="85" max="100" /> </p>
-                    </div>
-                    <div class="skill-information">
-                        <p> <i class="fab fa-react fa-3x"></i> </p>
-                        <p class="skill-name"> React </p>
-                        <p> <progress value="70" max="100" /> </p>
-                    </div>
-                    <div class="skill-information">
-                        <p> <i class="fa-solid fa-database fa-3x"></i> </p>
-                        <p class="skill-name"> SQL </p>
-                        <p> <progress value="65" max="100" /> </p>
-                    </div>
-                    <div class="skill-information">
-                        <p> <i class="fab fa-bootstrap fa-3x"></i> </p>
-                        <p class="skill-name"> Bootstrap </p>
-                        <p> <progress value="65" max="100" /> </p>
-                    </div>
-                    <div class="skill-information">
-                        <p> <i class="fa-brands fa-java fa-3x"></i> </p>
-                        <p class="skill-name"> Java </p>
-                        <p> <progress value="45" max="100" /> </p>
-                    </div>
-                    <div class="skill-information">
-                        <p> <i class="fab fa-python fa-3x"></i> </p>
-                        <p class="skill-name"> Python </p>
-                        <p> <progress value="65" max="100" /> </p>
-                    </div>
-                    <div class="skill-information">
-                        <p> <i class="fab fa-git-alt fa-3x"></i> </p>
-                        <p class="skill-name"> Git </p>
-                        <p> <progress value="65" max="100" /> </p>
-                    </div>
-                    <div class="skill-information">
-                        <p> <i class="fa-solid fa-leaf fa-3x"></i>> </p>
-                        <p class="skill-name"> SpringBoot </p>
-                        <p> <progress value="65" max="100" /> </p>
-                    </div>
-                </div> 
-            </section>
-    
-            <section class="projects-section">
-                <h1 class="section-heading">My projects</h1>
-                <div class="projects-container">
-                    <div class="image-box">
-                        <a href="/pizza">
-                            <img src="https://cdn.pixabay.com/photo/2016/08/20/06/44/e-commerce-1606962__340.png" alt="">
-                            <div>Test</div>
-                        </a>
-                    </div>
-                    <div class="image-box">
-                        <a href="#">
-                            <img src="https://cdn.pixabay.com/photo/2018/05/18/15/30/webdesign-3411373__340.jpg" alt="">
-                            <div>Company website</div>
-                        </a>
-                    </div>
-                    <div class="image-box">
-                        <a href="#">
-                            <img src="https://cdn.pixabay.com/photo/2015/01/20/14/27/office-605503__340.jpg" alt="">
-                            <div>Test</div>
-                        </a>
-                    </div>
-                    <div class="image-box">
-                        <a href="#">
-                            <img src="https://cdn.pixabay.com/photo/2016/11/13/04/52/statistic-1820320__340.png" alt="">
-                            <div>Test</div>
-                        </a>
-                    </div>
-                    <div class="image-box">
-                        <a href="#">
-                            <img src="https://cdn.pixabay.com/photo/2016/08/17/04/43/template-1599667__340.png" alt="">
-                            <div>Test</div>
-                        </a>
+                <!-- Masthead Subheading-->
+                <p class="masthead-subheading font-weight-light mb-0">Full Stack Web Developer</p>
+            </div>
+        </header>
+        <!-- Portfolio Section-->
+        <section class="page-section portfolio" id="portfolio">
+            <div class="container">
+                
+                <!-- www.DarmowyLicznik.pl -->
+                <div class="image-rotator text-center">
+                    <div class="rotator-slide" id="rotator-slide-1">Licznik odwiedzin: 
+                        <a href="https://www.darmowylicznik.pl/" title="Przejdź na stronę licznika" target="_blank"><img src="https://www.darmowylicznik.pl/licznik.php?id=147112" alt="Darmowy licznik odwiedzin" style="border:0px;" /></a>
                     </div>
                 </div>
-            </section>
-    
-            <section id="contact-section">
-                <h1 class="section-heading">Let's work together</h1>
-                <p>Find me on:</p>
-                <p>
-                    <a href="https://github.com/ColJops"> <i class="fab fa-github"> Github</i> </a>
-                    <a href="https://www.linkedin.com/in/daniel-kupracz-73961827b/"> <i class="fab fa-linkedin-in"> Linkedin</i> </a>
-                    <a href="#"> <i class="fas fa-envelope-square"> Email</i> </a>
-                </p>
-            </section>
-    
-        </main>
-        <script src="https://kit.fontawesome.com/ddf5a73b25.js" crossorigin="anonymous"></script>
+                <!-- END www.DarmowyLicznik.pl -->
+                <br>
+                
+                <!-- Portfolio Section Heading-->
+                <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Projekty</h2>
+                <!-- Icon Divider-->
+                <div class="divider-custom">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                    <div class="divider-custom-line"></div>
+                </div>
+                <!-- Portfolio Grid Items-->
+                <div class="row justify-content-center">
+                    <!-- Portfolio Item 1-->
+                    <div class="col-md-6 col-lg-4 mb-5">
+                        <p class="lead mb-0 text-center">Front-End</p>
+                        <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal1">
+                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+                            </div>
+                            <!--img class="img-fluid" src="/src/main/resources/static/assets/img/portfolio/front.jpg" alt="..." /-->
+                            <img class="img-fluid" th:src="@{/assets/img/portfolio/front.jpg}" alt="..." />
+                        </div>
+                    </div>
+                    <!-- Portfolio Item 2-->
+                    <div class="col-md-6 col-lg-4 mb-5">
+                        <p class="lead mb-0 text-center">Back-End</p>
+                        <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal2">
+                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+                            </div>
+                            <!--img class="img-fluid" src="/src/main/resources/static/assets/img/portfolio/back.jpg" alt="..." /-->
+                            <img class="img-fluid" th:src="@{/assets/img/portfolio/back.jpg}" alt="..." />
+                        </div>
+                    </div>
+                    <!-- Portfolio Item 3-->
+                    <div class="col-md-6 col-lg-4 mb-5">
+                        <p class="lead mb-0 text-center">Full-Stack</p>
+                        <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal3">
+                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+                            </div>
+                            <!--img class="img-fluid" src="/src/main/resources/static/assets/img/portfolio/fullstack.jpg" alt="..." /-->
+                            <img class="img-fluid" th:src="@{/assets/img/portfolio/fullstack.jpg}" alt="..." />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- About Section-->
+        <section class="page-section bg-primary text-white mb-0" id="about">
+            <div class="container">
+                <!-- About Section Heading-->
+                <h2 class="page-section-heading text-center text-uppercase text-white">O mnie</h2>
+                <!-- Icon Divider-->
+                <div class="divider-custom divider-light">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                    <div class="divider-custom-line"></div>
+                </div>
+                <!-- About Section Content-->
+                <div class="row">
+                    <div class="col-lg-4 ms-auto"><p class="lead">Sekcja w trakcie uzupełniania</p></div>
+                    <div class="col-lg-4 me-auto"><p class="lead"></p></div>
+                </div>
+            </div>
+        </section>
+        <!-- Contact Section-->
+        <section class="page-section" id="contact">
+            <div class="container">
+                <!-- Contact Section Heading-->
+                <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Napisz do mnie</h2>
+                <p class="text-center" style="color: red;">(Formularz tymczasowo niedostępny)</p>
+                <!-- Icon Divider-->
+                <div class="divider-custom">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                    <div class="divider-custom-line"></div>
+                </div>
+                <!-- Contact Section Form-->
+                <div class="row justify-content-center">
+                    <div class="col-lg-8 col-xl-7">
+                        <!-- Formularz tymczasowo wyłączony-->
+                        <form id="contactForm" data-sb-form-api-token="API_TOKEN" >
+                            <!-- Name input-->
+                            <div class="form-floating mb-3">
+                                <input class="form-control" id="name" type="text" placeholder="Podaj imię" data-sb-validations="required" disabled/>
+                                <label for="name">Imię</label>
+                                <div class="invalid-feedback" data-sb-feedback="name:required">Imię wymagane!</div>
+                            </div>
+                            <!-- Email address input-->
+                            <div class="form-floating mb-3">
+                                <input class="form-control" id="email" type="email" placeholder="name@example.com" data-sb-validations="required,email" disabled/>
+                                <label for="email">Email</label>
+                                <div class="invalid-feedback" data-sb-feedback="email:required">Email wymagany</div>
+                                <div class="invalid-feedback" data-sb-feedback="email:email">Błędny email</div>
+                            </div>
+                            <!-- Phone number input-->
+                            <div class="form-floating mb-3">
+                                <input class="form-control" id="phone" type="tel" placeholder="telefon" data-sb-validations="required" disabled/>
+                                <label for="phone">Nr telefonu</label>
+                                <div class="invalid-feedback" data-sb-feedback="phone:required">Numer telefonu wymagany</div>
+                            </div>
+                            <!-- Message input-->
+                            <div class="form-floating mb-3">
+                                <textarea class="form-control" id="message" type="text" placeholder="Wpisz wiadomość" style="height: 10rem" data-sb-validations="required" disabled></textarea>
+                                <label for="message">Wiadomość</label>
+                                <div class="invalid-feedback" data-sb-feedback="message:required">Pole wymagane!</div>
+                            </div>
+                            <!-- Submit success message-->
+                            <!---->
+                            <!-- This is what your users will see when the form-->
+                            <!-- has successfully submitted-->
+                            <div class="d-none" id="submitSuccessMessage">
+                                <div class="text-center mb-3">
+                                    <div class="fw-bolder">Wiadomość wysłana!</div>
+                                </div>
+                            </div>
+                            <!-- Submit error message-->
+                            <!---->
+                            <!-- This is what your users will see when there is-->
+                            <!-- an error submitting the form-->
+                            <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Błąd wysłana wiadomości!</div></div>
+                            <!-- Submit Button-->
+                            <button class="btn btn-primary btn-xl disabled" id="submitButton" type="submit">Wyślij</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Footer-->
+        <footer class="footer text-center">
+            <div class="container">
+                <div class="row">
+                    <!-- Footer Location-->
+                    <div class="col-lg-4 mb-5 mb-lg-0">
+                        <h4 class="text-uppercase mb-4">Adres</h4>
+                        <p class="lead mb-0">
+                            Lelewela 13/9
+                            <br />
+                            75-450 Koszalin
+                        </p>
+                    </div>
+                    <!-- Footer Social Icons-->
+                    <div class="col-lg-4 mb-5 mb-lg-0">
+                        <h4 class="text-uppercase mb-4">W sieci</h4>
+                        <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-facebook-f"></i></a>
+                        <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-github"></i></a>
+                        <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-linkedin-in"></i></a>
+                        <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-envelope"></i></a>
+                    </div>
+                    <!-- Footer About Text-->
+                    <div class="col-lg-4">
+                        <h4 class="text-uppercase mb-4">O stronie</h4>
+                        <p class="lead mb-0">
+                            Aktualizacja: 27.01.2024 <br>
+                            Strona używa layoutu Bootstrap na licencji MIT:
+                            <a href="http://startbootstrap.com">Start Bootstrap</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- Copyright Section-->
+        <div class="copyright py-4 text-center text-white">
+            <div class="container"><small>Copyright &copy; Daniel Kupracz 2024</small></div>
+        </div>
+        <!-- Portfolio Modals-->
+        <!-- Portfolio Modal 1-->
+        <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" aria-labelledby="portfolioModal1" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
+                    <div class="modal-body text-center pb-5">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8">
+                                    <!-- Portfolio Modal - Title-->
+                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Projekty Front-End</h2>
+                                    <!-- Icon Divider-->
+                                    <div class="divider-custom">
+                                        <div class="divider-custom-line"></div>
+                                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                                        <div class="divider-custom-line"></div>
+                                    </div>
+                                    <!-- Portfolio Modal - Image-->
+                                    <!--img class="img-fluid rounded mb-5" src="/src/main/resources/static/assets/img/portfolio/front.jpg" alt="..." /-->
+                                    <img class="img-fluid rounded mb-5" th:src="@{/assets/img/portfolio/front.jpg}" alt="..." />
+                                    <!-- Portfolio Modal - Text-->
+                                    <p class="mb-4">Przykładowe strony www powstałe w trakcie nauki Front-Endu. Powstałe w czystym HTML5 i CSS bez użycia frameworków (React, Bootstrap).</p>
+                                    <button class="btn btn-primary" data-bs-dismiss="modal">
+                                        <i class="fas fa-xmark fa-fw"></i>
+                                        Close Window
+                                    </button>
+                                    <button class="btn btn-primary" type="submit"><a href="/frontend">Przejdź</a></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Portfolio Modal 2-->
+        <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" aria-labelledby="portfolioModal2" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
+                    <div class="modal-body text-center pb-5">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8">
+                                    <!-- Portfolio Modal - Title-->
+                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Projekty Back-End</h2>
+                                    <!-- Icon Divider-->
+                                    <div class="divider-custom">
+                                        <div class="divider-custom-line"></div>
+                                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                                        <div class="divider-custom-line"></div>
+                                    </div>
+                                    <!-- Portfolio Modal - Image-->
+                                    <!--img class="img-fluid rounded mb-5" src="/src/main/resources/static/assets/img/portfolio/back.jpg" alt="..." /-->
+                                    <img class="img-fluid rounded mb-5" th:src="@{/assets/img/portfolio/back.jpg}" alt="..." />
+                                    <!-- Portfolio Modal - Text-->
+                                    <p class="mb-4">Projekty konsolowe (również grupowe) powstałe w trakcie nauki w Codecool.</p>
+                                    <button class="btn btn-primary" data-bs-dismiss="modal">
+                                        <i class="fas fa-xmark fa-fw"></i>
+                                        Close Window
+                                    </button>
+                                    <button class="btn btn-primary" type="submit"><a href="/backend">Przejdź</a></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Portfolio Modal 3-->
+        <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" aria-labelledby="portfolioModal3" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
+                    <div class="modal-body text-center pb-5">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8">
+                                    <!-- Portfolio Modal - Title-->
+                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Projekty Full-Stack</h2>
+                                    <!-- Icon Divider-->
+                                    <div class="divider-custom">
+                                        <div class="divider-custom-line"></div>
+                                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                                        <div class="divider-custom-line"></div>
+                                    </div>
+                                    <!-- Portfolio Modal - Image-->
+                                    <!--img class="img-fluid rounded mb-5" src="/src/main/resources/static/assets/img/portfolio/fullstack.jpg" alt="..." /-->
+                                    <img class="img-fluid rounded mb-5" th:src="@{/assets/img/portfolio/fullstack.jpg}" alt="..." />
+                                    <!-- Portfolio Modal - Text-->
+                                    <p class="mb-4">Projekty aplikacji webowych.</p>
+                                    <button class="btn btn-primary" data-bs-dismiss="modal">
+                                        <i class="fas fa-xmark fa-fw"></i>
+                                        Close Window
+                                    </button>
+                                    <button class="btn btn-primary" type="submit"><a href="/fullstack">Przejdź</a></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <!--script-- src="/src/main/resources/static/js/index.js"></script-->
+        <script type="text/javascript" th:src="@{/js/index.js}"></script>
+        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+        <!-- * *                               SB Forms JS                               * *-->
+        <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
+        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+        <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
     </body>
 </html>
